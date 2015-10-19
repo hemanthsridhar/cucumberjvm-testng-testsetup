@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Test runner]">
+  <test name="Package with subpackages(failed)">
+    <classes>
+      <class name="com.bdd.framework.runcukes.TestngRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0 1"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.bdd.framework.runcukes.TestngRunner -->
+    </classes>
+  </test> <!-- Package with subpackages(failed) -->
+</suite> <!-- Failed suite [Test runner] -->

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test runner" duration-ms="14887" started-at="2015-10-18T18:00:39Z" finished-at="2015-10-18T18:00:54Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.bdd.framework.runcukes.TestngRunner@32709393]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Package with subpackages" duration-ms="14887" started-at="2015-10-18T18:00:39Z" finished-at="2015-10-18T18:00:54Z">
+      <class name="com.bdd.framework.runcukes.TestngRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.bdd.framework.runcukes.TestngRunner@32709393]" name="setUpClass" is-config="true" duration-ms="331" started-at="2015-10-18T23:30:48Z" finished-at="2015-10-18T23:30:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.bdd.framework.runcukes.TestngRunner@32709393]" name="feature" duration-ms="3495" started-at="2015-10-18T23:30:48Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2015-10-18T23:30:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Download section]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.bdd.framework.runcukes.TestngRunner@32709393]" name="feature" duration-ms="1506" started-at="2015-10-18T23:30:52Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2015-10-18T23:30:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Download section]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.bdd.framework.runcukes.TestngRunner@32709393]" name="tearDownClass" is-config="true" duration-ms="52" started-at="2015-10-18T23:30:53Z" finished-at="2015-10-18T23:30:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.bdd.framework.runcukes.TestngRunner -->
+      <class name="com.bdd.framework.maincontroller.MainController">
+        <test-method status="PASS" signature="screenshotCleanUp()[pri:0, instance:com.bdd.framework.maincontroller.MainController@1dfe2924]" name="screenshotCleanUp" is-config="true" duration-ms="16" started-at="2015-10-18T23:30:39Z" finished-at="2015-10-18T23:30:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenshotCleanUp -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.bdd.framework.maincontroller.MainController@1dfe2924]" name="beforeTest" is-config="true" duration-ms="9314" started-at="2015-10-18T23:30:39Z" finished-at="2015-10-18T23:30:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.bdd.framework.maincontroller.MainController@1dfe2924]" name="tearDownClass" is-config="true" duration-ms="399" started-at="2015-10-18T23:30:54Z" finished-at="2015-10-18T23:30:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.bdd.framework.maincontroller.MainController -->
+    </test> <!-- Package with subpackages -->
+  </suite> <!-- Test runner -->
+</testng-results>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1445191239128" stop="1445191254030" version="1.4.19" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Test runner</name>
+    <title>Test runner : Package with subpackages</title>
+    <test-cases>
+        <test-case start="1445191248874" stop="1445191252358" status="passed">
+            <name>feature[Download section]</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="USER-PC"/>
+                <label name="thread" value="18348@USER-PC.main(1)"/>
+            </labels>
+        </test-case>
+        <test-case start="1445191252447" stop="1445191253951" status="passed">
+            <name>feature[Download section]</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="host" value="USER-PC"/>
+                <label name="thread" value="18348@USER-PC.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

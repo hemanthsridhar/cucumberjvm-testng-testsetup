@@ -1,0 +1,9 @@
+com\bdd\framework\maincontroller\MainController.class
+com\bdd\framework\pageobjects\googleHomePageObjects.class
+com\bdd\framework\utils\ExcelLibrary.class
+com\bdd\framework\utils\Screenshot.class
+com\bdd\framework\maincontroller\AllureAdapter.class
+com\bdd\framework\runcukes\TestngRunner.class
+com\bdd\framework\utils\Waiting.class
+com\bdd\framework\stepdefinitions\StepDefinitions.class
+com\bdd\framework\utils\SearchData.class

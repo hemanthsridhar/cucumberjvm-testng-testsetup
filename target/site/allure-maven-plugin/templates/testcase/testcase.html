@@ -1,0 +1,79 @@
+<div class="b-island__title">
+    Test case<span ng-show="testcase.name" class="text-muted">: {{testcase.name}} <copy-button text="testcase.name"></copy-button></span>
+</div>
+<div class="pane__header title-status-{{testcase.status | lowercase}}">
+    <h3>
+        <div class="pane__header_controls pull-right">
+            <span class="fa fa-expand clickable" tooltip="Expand" ng-hide="isState('testcase.expanded')" ng-click="go('testcase.expanded')"></span>
+            <span class="fa fa-compress clickable" tooltip="Collapse" ng-show="isState('testcase.expanded')" ng-click="go('testcase')"></span>
+            <span class="fa fa-close clickable" tooltip="Close" ng-click="closeTestcase()"></span>
+        </div>
+        <span class="icon-status-{{testcase.status | lowercase}}"></span>
+        {{testcase.title}}
+        <small>Severity: {{testcase.severity}}</small>
+    </h3>
+    <div class="issues" ng-show="testcase.issues">
+        <span class="fa fa-bug"/>
+        Issues:
+        <span class="issue" ng-repeat="issue in testcase.issues">
+            <a ng-href="{{issue.url}}" target="_blank">{{issue.name}}</a><span ng-show="!$last">,</span>
+        </span>
+    </div>
+</div>
+<div class="testcase__content" on-keynav="select($direction)">
+    <div class="testcase__description preformated-text" text-cut="testcase.description.value" ng-show="testcase.description.value"></div>
+    <div ng-include="'testcaseFailure.tpl'"></div>
+    <div class="environments">
+        <div class="environment" ng-repeat="property in testcase.parameters | filter:{'kind':'ENVIRONMENT_VARIABLE'}">
+            <div class="pull-left environment_name text-muted">{{property.name}}:</div>
+            <div class="pull-left" ng-bind-html="property.value | linky"></div>
+        </div>
+    </div>
+    <div class="step" ng-repeat="step in testcase.steps" ng-controller="StepCtrl">
+        <ng-include src="'testcaseStep.tpl'"></ng-include>
+    </div>
+    <div class="testcase__status alert-status-passed" ng-show="testcase.status == 'PASSED'">
+        The test has passed!
+    </div>
+    <div class="list-item clickable" ng-repeat="attachment in testcase.attachments" ng-click="setAttachment(attachment.uid)" ng-class="{active:attachment==$parent.attachment}">
+        <ng-include src="'testcaseAttachment.tpl'"></ng-include>
+    </div>
+</div>
+<br/>
+<script type="text/ng-template" id="testcaseFailure.tpl">
+    <div class="testcase__status alert-status-{{testcase.status | lowercase}}" ng-show="testcase.status !== 'PASSED'" ng-controller="angular.noop">
+        <div class="btn-group pull-right ">
+            <span class="btn btn-default btn-sm btn-status-{{testcase.status|lowercase}}" ng-click="stacktraceRaw = !stacktraceRaw" ng-class="{'active': stacktraceRaw}">Raw</span>
+            <span class="btn btn-default btn-sm btn-status-{{testcase.status|lowercase}}" ng-click="stacktraceExpanded = !stacktraceExpanded" ng-class="{'active': stacktraceExpanded}">Stacktrace</span>
+        </div>
+
+        <span class="preformated-text" ng-click="stacktraceExpanded = !stacktraceExpanded" ng-class="{'testcase__status--raw': stacktraceRaw}">{{failure.message}}</span>
+        <div ng-show="stacktraceExpanded" class="testcase__stacktrace preformated-text" ng-class="{'testcase__status--raw': stacktraceRaw}">{{failure.stackTrace}}</div>
+    </div>
+</script>
+<script type="text/ng-template" id="testcaseAttachment.tpl">
+    <span ng-class="getIconClass(attachment.type)" tooltip="{{attachment.type}}"></span>
+    <span>{{attachment.title}}</span>
+    <a target="_blank" ng-click="$event.stopPropagation()" ng-href="{{'data/'+attachment.source}}" class="pull-right attachment_size">
+        <i class="fa fa-floppy-o"></i>
+        <i>{{attachment.size | filesize}}</i>
+    </a>
+</script>
+<script type="text/ng-template" id="testcaseStep.tpl">
+    <div class="list-item" ng-click="toggleExpand()" ng-class="{clickable: hasContent}">
+        <b class="step__expand" ng-show="hasContent && !expanded">+</b>
+        <b class="step__expand" ng-show="hasContent && expanded">-</b>
+        <span class="step__time text-muted">[{{step.time.start | date:'HH:mm:ss.sss'}}]</span>
+        <span class="step__title long-line" ng-class="getStepClass(step)">{{step.title}}</span>
+        <span class="text-muted">{{formatSummary(step)}}</span>
+    </div>
+    <div class="step__content" ng-if="expanded">
+        <div ng-repeat="step in step.steps" ng-controller="StepCtrl">
+            <ng-include src="'testcaseStep.tpl'"></ng-include>
+        </div>
+        <div ng-include="'testcaseFailure.tpl'" ng-if="step.failure"></div>
+        <div class="list-item clickable" ng-repeat="attachment in step.attachments" ng-click="setAttachment(attachment.uid)" ng-class="{active:attachment==$parent.attachment}">
+            <ng-include src="'testcaseAttachment.tpl'"></ng-include>
+        </div>
+    </div>
+</script>

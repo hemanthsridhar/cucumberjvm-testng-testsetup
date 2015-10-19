@@ -1,0 +1,48 @@
+{
+  "features" : [ {
+    "title" : "Without feature",
+    "statistic" : {
+      "total" : 2,
+      "passed" : 2,
+      "pending" : 0,
+      "canceled" : 0,
+      "failed" : 0,
+      "broken" : 0
+    },
+    "stories" : [ {
+      "uid" : "5f3b024b0da60efe9ecb322fd34a2604",
+      "title" : "Without story",
+      "statistic" : {
+        "total" : 2,
+        "passed" : 2,
+        "pending" : 0,
+        "canceled" : 0,
+        "failed" : 0,
+        "broken" : 0
+      },
+      "testCases" : [ {
+        "uid" : "413a54fad5fd453c",
+        "name" : "feature[Download section]",
+        "title" : "Feature [Download section]",
+        "time" : {
+          "start" : 1445191248874,
+          "stop" : 1445191252358,
+          "duration" : 3484
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      }, {
+        "uid" : "59bda877b004ff6f",
+        "name" : "feature[Download section]",
+        "title" : "Feature [Download section]",
+        "time" : {
+          "start" : 1445191252447,
+          "stop" : 1445191253951,
+          "duration" : 1504
+        },
+        "severity" : "NORMAL",
+        "status" : "PASSED"
+      } ]
+    } ]
+  } ]
+}
